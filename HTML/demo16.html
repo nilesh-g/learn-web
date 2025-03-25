@@ -1,0 +1,50 @@
+<html>
+  <head>
+    <meta name="author" content="Nilesh Ghule" />
+    <title>Sunbeam</title>
+    <meta name="description" content="Form tags" />
+  </head>
+  <body>
+    <h1>Enquiry Form</h1>
+    <form id="enquiryForm">
+      <div>
+        <label for="nameInput">Name: </label>
+        <input id="nameInput" type="text" name="name" placeholder="Full Name" required />
+      </div>
+      <br />
+      <div>
+        <label for="emailInput">Email: </label>
+        <input id="emailInput" type="email" name="email" placeholder="Email" required />
+      </div>
+      <br />
+      <div>
+        <label for="mobileInput">Mobile: </label>
+        <input id="mobileInput" type="tel" name="mobile" placeholder="Mobile" required />
+      </div>
+      <br />
+      <div>
+        <div>
+          <label for="queryInput">Query: </label>
+        </div>
+        <textarea id="queryInput" name="query" rows="4" cols="35" required></textarea>
+      </div>
+      <br />
+      <div>
+        <label>Subscribe to Sunbeam course's updates?: </label>
+        <div>
+          <input id="subscribeEmailInput" type="checkbox" name="subscribe" value="Email" required />
+          <label for="subscribeEmailInput">By Email</label>
+          <input id="subscribeSMSInput" type="checkbox" name="subscribe" value="SMS" required />
+          <label for="subscribeSMSInput">By SMS</label>
+          <input id="subscribeCallInput" type="checkbox" name="subscribe" value="Call" required />
+          <label for="subscribeCallInput">By Call</label>
+        </div>
+      </div>
+      <br />
+      <div>
+        <input type="submit" value="Submit" />
+        <input type="reset" value="Clear" />
+      </div>
+    </form>
+  </body>
+</html>
