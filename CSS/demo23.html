@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Nilesh Ghule" />
+    <meta name="description" content="Media Query" />
+    <title>Media Query</title>
+    <style>
+      /* Default style for mobile */
+      ul.navbar {
+        background-color: blue;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        list-style-type: none;
+        color: white;
+      }
+      ul.navbar > li {
+        padding: 2px;
+        margin: 2px;
+        /* font: font-style font-variant font-weight font-size/line-height font-family; */
+        font: normal small-caps bold 14px/30px "Cambria";
+        transition: all 0.5s;
+      }
+      ul.navbar > li:hover {
+        color: yellow;
+      }
+
+      ul.navbar > li > a {
+        text-decoration: none;
+        color: white;
+      }
+
+      /* Style for tablets and desktops */
+      @media screen and (min-width: 768px) {
+        ul.navbar {
+          flex-direction: row;
+          justify-content: space-between;
+        }
+      }
+
+      /* Default style for mobile */
+      .gallery {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+        justify-items: center;
+      }
+      .course {
+        width: 150px;
+        height: 200px;
+        background-color: coral;
+        text-align: center;
+        align-content: center;
+        box-shadow: 2px 2px 5px gray;
+        font-family: "Lucida Sans";
+        font-weight: bold;
+        font-style: italic;
+        font-size: 24px;
+        transition: all 0.5s;
+        margin: 10px;
+        scale: 1.1;
+      }
+      .course:hover {
+        box-shadow: 3px 3px 8px black;
+      }
+
+      /* Style for tablets */
+      @media screen and (min-width: 768px) {
+        .course {
+          margin: 20px;
+          scale: 1.2;
+        }
+        .gallery {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      /* Style for desktops */
+      @media screen and (min-width: 1024px) {
+        .course {
+          margin: 30px;
+          scale: 1.3;
+        }
+        .gallery {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+
+      /* Default style for mobile */
+      h1,
+      h2 {
+        text-align: center;
+        font-style: italic;
+      }
+      .mobiletitle {
+        display: block;
+      }
+      .tablettitle {
+        display: none;
+      }
+      .desktoptitle {
+        display: none;
+      }
+      /* Style for tablets */
+      @media screen and (min-width: 768px) {
+        .mobiletitle {
+          display: none;
+        }
+        .tablettitle {
+          display: block;
+        }
+        .desktoptitle {
+          display: none;
+        }
+      }
+      /* Style for desktops */
+      @media screen and (min-width: 1024px) {
+        .mobiletitle {
+          display: none;
+        }
+        .tablettitle {
+          display: none;
+        }
+        .desktoptitle {
+          display: block;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>CSS Media Queries</h1>
+    <h2 class="mobiletitle">On Mobile</h2>
+    <h2 class="tablettitle">On Tablet</h2>
+    <h2 class="desktoptitle">On Desktop</h2>
+    <nav>
+      <ul class="navbar">
+        <li>About Us</li>
+        <li><a href="demo25.html">Branches</a></li>
+        <li>Courses</li>
+        <li><a href="demo24.html">Contact Us</a></li>
+        <li>Admission</li>
+        <li></li>
+      </ul>
+    </nav>
+    <div class="gallery">
+      <div class="course">Generative AI</div>
+      <div class="course">Python</div>
+      <div class="course">Java</div>
+      <div class="course">Data Structures</div>
+      <div class="course">MERN</div>
+      <div class="course">DevOps</div>
+    </div>
+  </body>
+</html>

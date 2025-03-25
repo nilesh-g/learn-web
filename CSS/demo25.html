@@ -1,0 +1,61 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Nilesh Ghule" />
+    <title>Dashboard</title>
+    <meta name="description" content="Dashboard" />
+    <style>
+      main {
+        display: grid;
+        grid-template-columns: 15% 1fr 15%;
+        grid-template-areas:
+          "leftsidebar header header"
+          "leftsidebar maincontent rightsidebar"
+          "homebtn footer footer";
+        background-color: lightgray;
+      }
+      div#title {
+        grid-area: header;
+        text-align: center;
+      }
+      aside#leftsidebar {
+        grid-area: leftsidebar;
+        background-color: lightcoral;
+      }
+      aside#rightsidebar {
+        grid-area: rightsidebar;
+        background-color: lightgreen;
+      }
+      section#maincontent {
+        grid-area: maincontent;
+        background-color: lightblue;
+        height: 600px;
+      }
+      div#foot {
+        grid-area: footer;
+        display: flex;
+        justify-content: center;
+      }
+      a.home-btn {
+        grid-area: homebtn;
+        display: inline-block;
+        height: 30px;
+        margin: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div id="title">
+        <h1>Header</h1>
+      </div>
+      <aside id="leftsidebar">Left Menu</aside>
+      <aside id="rightsidebar">Right</aside>
+      <section id="maincontent">Main Body</section>
+      <a class="home-btn" href="demo23.html">🏠 Home</a>
+      <div id="foot">
+        <h6>Copyright (c) 2025, Sunbeam Infotech</h6>
+      </div>
+    </main>
+  </body>
+</html>

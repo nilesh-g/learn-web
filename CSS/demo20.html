@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Nilesh Ghule" />
+    <meta name="description" content="Position" />
+    <title>CSS Position</title>
+    <style>
+      div {
+        border: 2px solid black;
+        border-radius: 5px;
+        width: 50%;
+        height: 160px;
+        align-content: center;
+        background-color: yellow;
+      }
+      div.static {
+        /*default position - as per page flow*/
+        position: static;
+      }
+      div.relative {
+        /*relative to flow based position*/
+        position: relative;
+        top: 20px;
+        left: 40px;
+      }
+      div.absolute {
+        /*with respect to parent*/
+        position: absolute;
+        top: 625px;
+        right: 200px;
+        z-index: 1;
+      }
+      div.fixed {
+        /*with respect to screen -- irrespective of scrolling*/
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 2;
+      }
+      div.sticky {
+        /*like static & fixed*/
+        position: sticky;
+        top: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="static">Static Box</div>
+    <div class="relative">Relative Box</div>
+    <div class="absolute">Absolute Box</div>
+    <div class="fixed">Fixed Box</div>
+    <div class="sticky">Sticky Box</div>
+    <p>The CSS position property is a fundamental concept in web design that controls how elements are positioned on a webpage. It allows you to place elements precisely where you want them, relative to their default position, other elements, or the viewport. Here's a detailed explanation of the position property, along with demos and real-world examples to make it easier to understand.</p>
+    The position property has five possible values:
+    <ol>
+      <li>static</li>
+      <li>relative</li>
+      <li>absolute</li>
+      <li>fixed</li>
+      <li>sticky</li>
+    </ol>
+    <h4>Explanation</h4>
+    <p>
+      <b>static:</b>
+      The element is positioned according to the normal flow of the document. It ignores top, bottom, left, and right properties. All elements are static by default.
+    </p>
+    <p>
+      <b>relative:</b>
+      The element is positioned relative to its normal position in the document flow. You can use top, bottom, left, and right to offset it from its original position.
+    </p>
+    <p>
+      <b>absolute:</b>
+      The element is positioned relative to its nearest positioned ancestor i.e. parent. If no such ancestor exists, it is positioned relative to the document body. It is removed from the normal document flow.
+    </p>
+    <p>
+      <b>fixed:</b>
+      The element is positioned relative to the viewport (browser window). It stays in the same place even when the page is scrolled. It is removed from the normal document flow.
+    </p>
+    <p>
+      <b>sticky:</b>
+      The element is positioned based on the user's scroll position. It behaves like relative until it reaches a specified offset (top, bottom, left, or right), after which it becomes fixed (and removed from the normal document flow).
+    </p>
+    <section>
+      <h4>Real-World Examples</h4>
+      <p>Relative Positioning: Adjusting the position of an icon inside a button.</p>
+      <p>Absolute Positioning: Creating a tooltip that appears near a button or link.</p>
+      <p>Fixed Positioning: Adding a "Chat with Us" button that stays visible while scrolling.</p>
+      <p>Sticky Positioning: Making a table header stick to the top of the screen while scrolling through a long table.</p>
+    </section>
+  </body>
+</html>
