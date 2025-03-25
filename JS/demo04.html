@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Nilesh Ghule" />
+    <meta name="description" content="Functions" />
+    <title>JS Demo</title>
+  </head>
+  <body>
+    <h1>Built-in Functions!</h1>
+    <ul>
+      <li>Conversion functions: parseInt(), parseFloat().</li>
+      <li>eval(): to evaluate string expressions.</li>
+    </ul>
+    <script>
+      "use strict";
+      // string to number (int)
+      let n1 = parseInt("123");
+      console.log("n1 = " + n1); // 123
+      let n2 = parseInt("123.45");
+      console.log("n2 = " + n2); // 123
+      let n3 = parseInt("Bond007");
+      console.log("n3 = " + n3); // NaN
+      let n4 = parseInt("007Bond");
+      console.log("n4 = " + n4); // 7
+      // string to number (float)
+      let v1 = parseFloat("3.14");
+      console.log("v1 = " + v1); // 3.14
+      let v2 = parseFloat("123");
+      console.log("v2 = " + v2); // 123
+      // eval() to evaluate string expr
+      let v3 = eval("2 + 3 * 4");
+      console.log("v3 = " + v3); // v3
+      // alert - popup box
+      alert("Hello, JS!");
+    </script>
+  </body>
+</html>

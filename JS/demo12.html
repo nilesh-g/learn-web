@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Nilesh Ghule" />
+    <meta name="description" content="JS Arrays" />
+    <title>JS Demo</title>
+  </head>
+  <body>
+    <h1>Array Operations</h1>
+    <ul>
+      <li>push() - to push elements at the end.</li>
+      <li>splice(index, 0, newelems) - to insert elements at given index.</li>
+      <li>pop() - to delete the last element.</li>
+      <li>splice(index, delcount) - to delete num of elements from given index.</li>
+      <li>delete arr[i] - to delete element at given index - that position left "undefined".</li>
+      <li>at() - to access element at given index like []. at() can be used with -ve index to access elements from last e.g. at(-1) is last elem, at(-2) is second last elem, ...</li>
+      <li>slice(start,end) - to get a part of an array. the start index is inclusive, end index is exclusive.</li>
+    </ul>
+    <script>
+      "use strict";
+      function addItems() {
+        let names = ["Nilesh", "Rajiv", "Rohan"];
+        console.log("names : " + names);
+        names.push("Nitin");
+        names.push("Prashant");
+        console.log("names (after pushing 2 items) : " + names);
+        names.splice(1, 0, "Sarang", "Vishal");
+        // from 1st index, delete 0 elements, and insert "Sarang", "Vishal"
+        console.log("names (after splicing/insert 2 items at index 1) : " + names);
+        console.log("---------------------------------------------");
+      }
+      addItems();
+    </script>
+    <script>
+      "use strict";
+      function removeItems() {
+        let names = ["Nilesh", "Rajiv", "Rohan", "Nitin", "Prashant", "Sarang", "Vishal"];
+        console.log("names : " + names);
+        let n1 = names.pop();
+        console.log("popped item : " + n1);
+        let n2 = names.pop();
+        console.log("popped item : " + n2);
+        console.log("names (after popping 2 items) : " + names);
+        let n3 = names.splice(2, 1); // if delete count (arg2) missing all elements after that pos are deleted
+        console.log("spliced/deleted item (at 2nd pos) : " + n3);
+        console.log("names (after splice/delete 2nd pos) : " + names);
+        console.log("deleting 1st pos : " + names[1]);
+        delete names[1]; // delete element at position 1
+        // names[1] will be now "undefined" -- splice() is better than delete operator.
+        console.log("names (after deleting 1st pos) : " + names);
+        console.log("---------------------------------------------");
+      }
+      removeItems();
+    </script>
+    <script>
+      "use strict";
+      function accessElements() {
+        let names = ["Nilesh", "Rajiv", "Rohan", "Nitin", "Prashant"];
+        console.log("names[3] = ", names[3]);
+        console.log("names.at(3) = ", names.at(3));
+        console.log("names[-1] = ", names[-1]); // undefined
+        console.log("names.at(-1) = ", names.at(-1)); // access last element
+        // forward traversal
+        for (let i = 0; i < names.length; i++) {
+          console.log("fwd : " + names[i]);
+        }
+        // reverse traversal
+        for (let i = 0; i < names.length; i++) {
+          console.log("rev : " + names.at(-i - 1));
+        }
+        console.log("---------------------------------------------");
+      }
+      accessElements();
+    </script>
+    <script>
+      function sliceArray() {
+        let names = ["Nilesh", "Rajiv", "Rohan", "Nitin", "Prashant"];
+        let part = names.slice(1, 4);
+        console.log("names: " + names);
+        console.log("names(1,4): " + part);
+        console.log("---------------------------------------------");
+      }
+      sliceArray();
+    </script>
+  </body>
+</html>

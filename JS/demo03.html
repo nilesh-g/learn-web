@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Nilesh Ghule" />
+    <meta name="description" content="Functions" />
+    <title>JS Demo</title>
+  </head>
+  <body>
+    <h1>JavaScript Functions!</h1>
+    <ul>
+      <li>function is a reusable block of statement - defined once & can be called multiple times.</li>
+      <li>function may or may not have arguments (input to fn).</li>
+      <li>function may or may not return result (output from fn).</li>
+      <li>function argument types are inferred. fn can be called multiple times with different types of args.</li>
+      <li>if multiple fns defined with same name, last fn definition override/replace the earlier ones.</li>
+    </ul>
+    Note: "use strict"; directive defines that JavaScript code should be executed in "strict mode".
+    <ul>
+      <li>The "use strict" directive was new in ECMAScript version 5.</li>
+      <li>With strict mode good practices are enforced e.g. use of undeclared/implicit variables raise error.</li>
+      <li>You can use strict mode in all your programs. It helps you to write cleaner code, like preventing you from using undeclared variables.</li>
+      <li>Supported in all modern browsers. Not supported in IE-9 and earlier.</li>
+    </ul>
+    <script>
+      "use strict";
+      // function with no arguments
+      function printline() {
+        console.log("---------------------------------------");
+      }
+      // function with arguments
+      function multiply(a, b) {
+        const c = a * b;
+        console.log("multiply result = " + c);
+      }
+      // function returning result
+      function subtract(a, b) {
+        const c = a - b;
+        return c;
+      }
+      // calling functions
+      printline();
+      multiply(22, 7);
+      let res = subtract(22, 7);
+      console.log("subtract result = " + res);
+    </script>
+    <script>
+      "use strict";
+      // function arguments are not type-safe
+      function add(x, y) {
+        const z = x + y;
+        console.log(`${x} + ${y} = ${z} of type ${typeof z}`);
+      }
+      // function can be called with different arg types
+      add(22, 7);
+      add("Hello", "World");
+      add(10, true);
+      add("Bond", 7);
+      add("Flag", false);
+      // passing more arguments will ignore remaining args.
+      add(10, 20, 30);
+      // passing less arguments will consider remaining args undefined
+      add(10);
+    </script>
+    <script>
+      "use strict";
+      // if multiple fns defined with same name, last fn definition override/replace the earlier ones.
+      function f1() {
+        console.log("f1() called.");
+      }
+      function f1(x, y) {
+        console.log("f1(x, y) called: " + x + ", " + y);
+      }
+      function f1(x) {
+        console.log("f1(x) called: " + x);
+      }
+      f1(10, 20); // calls last f1(x).
+    </script>
+  </body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Nilesh Ghule" />
+    <meta name="description" content="JS Arrays" />
+    <title>JS Demo</title>
+  </head>
+  <body>
+    <h1>Array Operations - Functional Programming</h1>
+    <ul>
+      <li>map(fn) - operates on each array element and collect results into a new array.</li>
+      <li>filter(fn) - test a condition on each array element and collect elems satisfying the condition into a new array.</li>
+      <li>flatMap(fn) - operates on each array element so that each element produce a new array and then collect results into a new array (flattened).</li>
+      <li>reduce(fn, start) - calls given fn repeatedly with accumulated result and next element to produce a single final result.</li>
+      <li>sort(fn) - sorts given array with order defined by given fn and return result as new array.</li>
+    </ul>
+    <script>
+      "use strict";
+      function sqrNums() {
+        let nums = [11, 22, 33, 44, 55];
+        let sqrs = [];
+        for (let i = 0; i < nums.length; i++) {
+          sqrs.push(nums[i] * nums[i]);
+        }
+        console.log("nums : " + nums);
+        console.log("sqrs : " + sqrs);
+        console.log("---------------------------------------------");
+      }
+      sqrNums();
+    </script>
+    <script>
+      "use strict";
+      function sqrNumsMap() {
+        let nums = [11, 22, 33, 44, 55];
+        let sqrs = nums.map((n) => n * n);
+        console.log("nums : " + nums);
+        console.log("sqrs : " + sqrs);
+        console.log("---------------------------------------------");
+      }
+      sqrNumsMap();
+    </script>
+    <script>
+      "use strict";
+      function numsEvenFilter() {
+        let nums = [11, 22, 33, 44, 55, 66, 77, 88];
+        let evens = nums.filter((n) => n % 2 == 0);
+        console.log("nums : " + nums);
+        console.log("evens : " + evens);
+        console.log("---------------------------------------------");
+      }
+      numsEvenFilter();
+    </script>
+    <script>
+      "use strict";
+      function numsSplitDigitsFlatMap() {
+        function separateDigits(n) {
+          let digs = [];
+          while (n) {
+            digs.push(n % 10);
+            n = Math.trunc(n / 10);
+          }
+          return digs.reverse();
+        }
+        let nums = [123, 456, 789];
+        let digits = nums.flatMap((n) => separateDigits(n));
+        console.log("nums : " + nums);
+        console.log("digits : " + digits);
+        console.log("---------------------------------------------");
+      }
+      numsSplitDigitsFlatMap();
+    </script>
+    <script>
+      function reduceSum() {
+        let nums = [11, 22, 33, 44, 55];
+        let total = nums.reduce((x, y) => x + y, 0);
+        console.log("nums : " + nums);
+        console.log("total : " + total);
+      }
+      reduceSum();
+      console.log("---------------------------------------------");
+    </script>
+    <script>
+      function sortNums() {
+        let nums = [44, 33, 66, 22, 11, 55];
+        let sorted = nums.sort();
+        console.log("nums : " + nums);
+        console.log("sorted : " + sorted);
+        let revsorted = nums.sort((x, y) => y - x);
+        console.log("rev sorted : " + revsorted);
+      }
+      sortNums();
+      console.log("---------------------------------------------");
+    </script>
+  </body>
+</html>

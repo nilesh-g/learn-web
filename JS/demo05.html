@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Nilesh Ghule" />
+    <meta name="description" content="Scopes" />
+    <title>JS Demo</title>
+  </head>
+  <body>
+    <h1>Variable Scopes</h1>
+    <ul>
+      <li>variables declared without any keyword are "global". they are accessible in whole page after their assignment.</li>
+      <li>variables declared using var/let/const outside the function, are also global.</li>
+      <li>variables declared using "var" in a function are accessible in function scope.</li>
+      <li>if "var" is declared within a block (in a fn), it is accessible in whole fn (outside the block too).</li>
+      <li>"let" & "const" added in ES6 - 2015.</li>
+      <li>variables declared using "let" & "const" in a block are accessible in that block only (block scope).</li>
+    </ul>
+    <script>
+      /*global variables*/
+      gnum1 = 1; // global
+      var gnum2 = 2; // global (declared with var)
+
+      function f1() {
+        console.log("f1 => gnum1 = " + gnum1);
+        if (2 < 3) {
+          num1 = 10; // global num1 -- accessible throughout after assignment
+          console.log("f1 => inside if: num1 = " + num1);
+        }
+        console.log("f1 => outside if: num1 = " + num1);
+        console.log("f1 => gnum2 = " + gnum2);
+      }
+
+      function f2() {
+        console.log("f2 => gnum1 = " + gnum1);
+        console.log("f2 => num1 = " + num1);
+        console.log("f2 => gnum2 = " + gnum2);
+      }
+
+      f1();
+      console.log("after f1 => gnum1 = " + gnum1);
+      console.log("after f1 => num1 = " + num1);
+      console.log("after f1 => gnum2 = " + gnum2);
+      f2();
+      console.log("--------------------------------------------");
+    </script>
+    <script>
+      "use strict";
+
+      /*function scope - "var" keyword*/
+      function f3() {
+        if (2 < 3) {
+          var num3 = 10; // fn scoped num3 -- accessible in fn
+          console.log("f3 => inside if: num3 = " + num3);
+        }
+        num3++; // num3 modified
+        console.log("f3 => outside if: num3 = " + num3);
+      }
+
+      function f4() {
+        console.log("f4 => num3 = " + num3); // num3 not accessible outside the f3()
+      }
+
+      f3();
+      //console.log("after f3 => num3 = " + num3); // num3 not accessible outside the f3()
+      //f4();
+      console.log("--------------------------------------------");
+    </script>
+
+    <script>
+      "use strict";
+
+      /*block scope - "let" & "const" keyword*/
+      function f5() {
+        if (2 < 3) {
+          let num4 = 10; // block scoped num3 -- accessible in block
+          console.log("f5 => inside if: num4 = " + num4);
+          const num5 = 20;
+          console.log("f5 => inside if: num5 = " + num5);
+        }
+        //num4++; // not accessible outside the block
+        //console.log("f5 => outside if: num4 = " + num4);
+        //console.log("f5 => outside if: num5 = " + num5);
+      }
+      f5();
+    </script>
+  </body>
+</html>

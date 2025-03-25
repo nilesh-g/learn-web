@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Nilesh Ghule" />
+    <meta name="description" content="JS Arrays" />
+    <title>JS Demo</title>
+  </head>
+  <body>
+    <h1>JS Array</h1>
+    <ul>
+      <li>In JS, arrays are objects. Array object have properties (e.g. length) and methods (e.g. push(), pop(), etc).</li>
+      <li>Array is collection of elements. Array indices are in range 0 to n-1. Each element accessed using subscript.</li>
+      <li>All array elements can be of same type (common use case) or of mixed types.</li>
+      <li>for-of loop is introduced in ES6 (2015) to iterate through any iterable.</li>
+    </ul>
+    <script>
+      "use strict";
+      function numberArray() {
+        let nums = [11, 22, 33, 44, 55];
+        console.log("nums type = " + typeof nums); // object
+        console.log("nums = " + nums);
+        console.log("nums length = " + nums.length);
+        // traverse array
+        for (let i = 0; i < nums.length; i++) {
+          console.log("nums[" + i + "] = " + nums[i]);
+        }
+      }
+      // numberArray();
+    </script>
+
+    <script>
+      "use strict";
+      function stringArray() {
+        let names = ["Nilesh", "Rohan", "Rajiv", "Nitin"];
+        console.log("names type = " + typeof names); // object
+        console.log("names = " + names);
+        console.log("names length = " + names.length);
+        // traverse array
+        for (let i = 0; i < names.length; i++) {
+          console.log("names[" + i + "] = " + names[i]);
+        }
+      }
+      // stringArray();
+    </script>
+
+    <script>
+      "use strict";
+      function mixedArray() {
+        let mixed = [1, 3.142, "Nilesh", true, null];
+        console.log("mixed type = " + typeof mixed); // object
+        console.log("mixed = " + mixed);
+        console.log("mixed length = " + mixed.length);
+        // traverse array
+        for (let i = 0; i < mixed.length; i++) {
+          console.log("mixed[" + i + "] = " + mixed[i] + " of type " + typeof mixed[i]);
+        }
+      }
+      //mixedArray();
+    </script>
+
+    <script>
+      "use strict";
+      function traverseArrayUsingForOfLoop() {
+        let arr = [1.1, 2.2, 3.3, 4.4, 5.5];
+        for (let ele of arr) {
+          console.log("arr element: ", ele);
+        }
+      }
+      traverseArrayUsingForOfLoop();
+    </script>
+  </body>
+</html>

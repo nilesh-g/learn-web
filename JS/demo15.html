@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Nilesh Ghule" />
+    <meta name="description" content="JS DOM" />
+    <title>JS DOM</title>
+    <style>
+      button {
+        margin: 20px;
+        padding: 10px;
+        width: 200px;
+        border: none;
+        background-color: blue;
+        border-radius: 4px;
+        scale: 1.1;
+        color: white;
+        box-shadow: 2px 2px 4px gray;
+      }
+      .book {
+        font-size: 18px;
+        font-weight: bold;
+        color: brown;
+        font-style: italic;
+      }
+      .bookimg {
+        width: 100px;
+        border-radius: 10px;
+        border: 3px solid black;
+        box-shadow: 2px 2px 5px gray;
+        margin: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="title">My Favourite Books</h1>
+    <div id="books"></div>
+    <div style="display: flex; justify-content: center">
+      <button onclick="showBooksInnerHtml()">Show Books (Inner HTML)</button>
+      <button onclick="showBooksChildElem()">Show Books (Child Elems)</button>
+      <button onclick="showBooksStyled()">Show Books (Styled)</button>
+      <button onclick="showBookImages()">Show Books (Images)</button>
+    </div>
+    <script>
+      const books = [
+        {
+          srno: 1,
+          title: "Chhava",
+          author: "Shivaji Sawant",
+          category: "Historical",
+          price: 450,
+        },
+        {
+          srno: 2,
+          title: "Mrityunjay",
+          author: "Shivaji Sawant",
+          category: "Historical",
+          price: 500,
+        },
+        {
+          srno: 3,
+          title: "Yugandhar",
+          author: "Shivaji Sawant",
+          category: "Mythological",
+          price: 550,
+        },
+        {
+          srno: 4,
+          title: "Shriman Yogi",
+          author: "Ranjit Desai",
+          category: "Historical",
+          price: 480,
+        },
+        {
+          srno: 5,
+          title: "Batatyachi Chawl",
+          author: "P. L. Deshpande",
+          category: "Humor",
+          price: 350,
+        },
+        {
+          srno: 6,
+          title: "Swami",
+          author: "Ranjit Desai",
+          category: "Historical",
+          price: 400,
+        },
+        {
+          srno: 7,
+          title: "Pawankhind",
+          author: "Ranjit Desai",
+          category: "Historical",
+          price: 420,
+        },
+        {
+          srno: 8,
+          title: "Raja Ravi Verma",
+          author: "Ranjit Desai",
+          category: "Biography",
+          price: 380,
+        },
+        {
+          srno: 9,
+          title: "Yayati",
+          author: "V. S. Khandekar",
+          category: "Mythological",
+          price: 430,
+        },
+      ];
+      function showBooksInnerHtml() {
+        const booksDiv = document.getElementById("books");
+        booksDiv.innerHTML = ""; // clear existing contents
+        for (let i = 0; i < books.length; i++) {
+          const b = books[i];
+          booksDiv.innerHTML += "<div>" + b.title + "</div>";
+        }
+      }
+      function showBooksChildElem() {
+        const booksDiv = document.getElementById("books");
+        booksDiv.innerHTML = ""; // clear existing contents
+        for (let i = 0; i < books.length; i++) {
+          const b = books[i];
+          const p = document.createElement("p");
+          p.innerText = b.title;
+          booksDiv.appendChild(p);
+        }
+      }
+      function showBooksStyled() {
+        const booksDiv = document.getElementById("books");
+        booksDiv.innerHTML = ""; // clear existing contents
+        for (let i = 0; i < books.length; i++) {
+          const b = books[i];
+          const p = document.createElement("p");
+          p.innerText = i + 1 + ". " + b.title;
+          p.className = "book";
+          booksDiv.appendChild(p);
+        }
+      }
+      function showBookImages() {
+        const booksDiv = document.getElementById("books");
+        booksDiv.innerHTML = ""; // clear existing contents
+        for (let i = 0; i < books.length; i++) {
+          const b = books[i];
+          const img = document.createElement("img");
+          img.src = "images/webp/book" + (i + 1) + ".webp";
+          img.alt = b.title;
+          img.className = "bookimg";
+          booksDiv.appendChild(img);
+        }
+      }
+      // Assignment: Show full book info along with image (in div).
+    </script>
+  </body>
+</html>

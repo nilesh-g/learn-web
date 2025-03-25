@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Nilesh Ghule" />
+    <meta name="description" content="OOP fundamentals" />
+    <title>JS Demo</title>
+  </head>
+  <body>
+    <h1>OOP fundamentals</h1>
+    <ul>
+      <li>In JS, an object is a complex data type that allows you to store collections of key-value pairs.</li>
+      <li>Objects are dynamic, meaning you can add, modify, or delete properties after they are created.</li>
+      <li>Method1: Create object using new Object(). Properties can be added dynamically or accessed using dot operator.</li>
+      <li>Method2: Create object using new Object(). Properties can be added dynamically or accessed using [] subscript.</li>
+      <li>Method3: Create object using JSON syntax. Properties can be accessed using dot operator or [] subscript.</li>
+      <li>Method4: Create object using constructor function i.e. new FnName(args). Properties are added into fn using "this" pointer (which refers to newly created object). To add common properties & methods for all objects use prototype (next demo).</li>
+    </ul>
+    <script>
+      "use strict";
+      // create object & props in JS -- syntax 1 (using .)
+      let p = new Object();
+      p.name = "James Bond";
+      p.age = 65;
+      p.addr = "London";
+      console.log("type of p = " + typeof p);
+      console.log("p name = ", p.name);
+      console.log("p age = ", p.age);
+      console.log("p addr = ", p.addr);
+    </script>
+    <script>
+      "use strict";
+      // create object & props in JS -- syntax 2 (using [])
+      let m = new Object();
+      m["model"] = "iPhone 14 Pro";
+      m["company"] = "Apple";
+      m.price = 89000.0;
+      console.log("type of m = " + typeof m);
+      console.log("m model = ", m["model"]);
+      console.log("m company = ", m.company);
+      console.log("m price = ", m["price"]);
+    </script>
+    <script>
+      // create object & props in JS -- syntax 3 (using {})
+      let i = {
+        name: "Pencil",
+        company: "Natraj",
+        price: 5.0,
+      };
+      console.log("type of i = " + typeof i);
+      console.log("i name = ", i.name);
+      console.log("i company = ", m.company);
+      console.log("i price = ", i["price"]);
+    </script>
+    <script>
+      "use strict";
+      // create object & props in JS -- syntax 4 (using constructor function)
+      function Car(model, company, price) {
+        this.model = model;
+        this.company = company;
+        this.price = price;
+      }
+
+      let c = new Car("i10", "Hundai", 800000.0);
+      console.log("type of c = " + typeof c);
+      console.log("c model = ", c.model);
+      console.log("c company = ", c.company);
+      console.log("c price = ", c.price);
+    </script>
+  </body>
+</html>

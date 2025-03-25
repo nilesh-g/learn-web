@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Nilesh Ghule" />
+    <meta name="description" content="JS DOM" />
+    <title>JS DOM</title>
+    <style>
+      button {
+        margin: 20px;
+        padding: 10px;
+        width: 150px;
+        border: none;
+        background-color: blue;
+        border-radius: 4px;
+        scale: 1.2;
+        color: white;
+        box-shadow: 2px 2px 4px gray;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="title">DOM</h1>
+    <h2>Document object</h2>
+    <h2>Window object</h2>
+    <h2>Misc objects: Element, Event, etc.</h2>
+    <div style="display: flex; justify-content: center">
+      <button onclick="updateTitleH1()">Update Title</button>
+      <button onclick="updateH2Style()">Update SubTitles</button>
+      <button onclick="showAlert()">Show Alert</button>
+    </div>
+    <p>In browser DOM, the window and document objects are fundamental, with window representing the browser window and document representing the HTML document itself, allowing JavaScript to interact with and manipulate the page's content and structure.</p>
+    <strong>window object:</strong>
+    <ul>
+      <li>Represents the browser window and its contents.</li>
+      <li>Provides access to browser features like size, history, and location.</li>
+      <li>All global JavaScript objects, functions, and variables become members of the window object.</li>
+      <li>In &lt;script&gt;, "this" keyword refers to window object.</li>
+    </ul>
+    <strong>document object:</strong>
+    <ul>
+      <li>Represents the HTML document loaded in the browser window.</li>
+      <li>Is the root node of the HTML document, allowing access to all elements within it.</li>
+      <li>Provides methods and properties to access, modify, and manipulate the document's structure, content and decoration.</li>
+      <li>Methods to access various elements:</li>
+      <ol>
+        <li>getElementById()</li>
+        <li>getElementsByTagName()</li>
+        <li>getElementsByName()</li>
+        <li>getElementsByClassName()</li>
+        <li>querySelector() -- select elements by given CSS selector.</li>
+      </ol>
+    </ul>
+    <script>
+      function updateTitleH1() {
+        const title = document.getElementById("title");
+        title.innerText = "Document Object Model";
+        title.style.color = "red";
+        title.style.textAlign = "center";
+        title.style.fontFamily = "Verdana";
+      }
+
+      function updateH2Style() {
+        const h2s = document.getElementsByTagName("h2");
+        for (let i = 0; i < h2s.length; i++) {
+          const h2 = h2s[i];
+          h2.style.color = "green";
+          h2.style.textAlign = "center";
+        }
+      }
+
+      function showAlert() {
+        window.alert("Button is clicked!");
+        //this.alert("Button is clicked!");
+        //alert("Button is clicked!");
+      }
+    </script>
+  </body>
+</html>

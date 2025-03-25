@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Nilesh Ghule" />
+    <meta name="description" content="Functions" />
+    <title>JS Demo</title>
+  </head>
+  <body>
+    <h1>Functions</h1>
+    <ul>
+      <li>In JS, function can be treated as object. It can be assigned to another reference a.k.a. function alias. Using alias the actual function can be called.</li>
+      <li>Function alias concept can be used to pass fn as argument to fn, Return fn from another fn, Create anonymous fns and Lambda expressions.</li>
+      <li>Anonymous functions are created using function keyword, but not given any name. Anonymous fns assigned to alias and called via aliases only.</li>
+      <li>Lambda fns are Shorthand anonymous fns. They can be one-liner or multiline. However, one-liners are preferred. Lambda functions introduced in ES6.</li>
+      <li>A closure in JS is the combination of a function and the lexical environment within which that function was declared. This environment consists of any variables that were in scope at the time the function was created. Closures allow a function to access variables from its outer scope even after that scope has finished executing.</li>
+    </ul>
+    <script>
+      "use strict";
+      // function definition
+      function add(x, y) {
+        let z = x + y;
+        console.log(`add(): ${x} + ${y} = ${z}`);
+      }
+      console.log("add() -- type = " + typeof add + ", name = " + add.name);
+      add(22, 7);
+
+      // function alias
+      const calc = add;
+      console.log("calc -- type = " + typeof calc + ", name = " + calc.name);
+      calc(23, 8);
+    </script>
+    <script>
+      "use strict";
+      // anonymous function
+      const subtract = function (x, y) {
+        let z = x - y;
+        console.log(`subtract(): ${x} - ${y} = ${z}`);
+      };
+      subtract(22, 7);
+
+      // lambda
+      const multiply = (x, y) => {
+        let z = x * y;
+        console.log(`multiply(): ${x} * ${y} = ${z}`);
+      };
+      multiply(22, 7);
+
+      const divide = (x, y) => x / y;
+      const res = divide(22, 7);
+      console.log(`divide(): 22 / 7 = ${res}`);
+    </script>
+    <script>
+      "use strict";
+      // function closure
+      function outer() {
+        let z = 1;
+        // inner/nested fn -- accessing local var of outer fn
+        function inner(x, y) {
+          return x + y + z;
+        }
+        return inner;
+      }
+      // call outer fn & collect its return value
+      const infn = outer();
+      // call inner fn
+      const result = infn(22, 7);
+      console.log("final closure result = " + result);
+    </script>
+  </body>
+</html>

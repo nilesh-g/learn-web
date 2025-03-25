@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Nilesh Ghule" />
+    <meta name="description" content="Data Types & Variables" />
+    <title>JS Demo</title>
+  </head>
+  <body>
+    <h1>JavaScript Data types & Variables!</h1>
+    <div>
+      <strong>JS variables fundamentals</strong>
+      <ul>
+        <li>variables are named memory locations to hold the data.</li>
+        <li>variables are auto-declared upon assignment.</li>
+        <li>data types are inferred (auto-detected).</li>
+        <li>data types: number, boolean, string, object.</li>
+        <li>strings can be enclosed in '..', "..", or `..`.</li>
+        <li>templated strings to print var values: `var=${varname}`</li>
+      </ul>
+    </div>
+    <div>
+      <strong>JS var, let, and const keywords</strong>
+      <ul>
+        <li>variables can be declared explicitly using "var" keyword.</li>
+        <li>variables created without "var" are global -- called as implicit variable declaration.</li>
+        <li>variables created with "var" - have function scope.</li>
+        <li>variables can be declared explicitly using "let" keyword.</li>
+        <li>constant variables can be declared explicitly using "const" keyword.</li>
+        <li>variables created with "let" & "const" - have block scope.</li>
+        <li>modern JS prefer "let" & "const" over "var" keyword.</li>
+        <li>"var" variables can be redeclared in same scope, but "let" & "const" can't.</li>
+      </ul>
+      Note: scopes will be covered later.
+    </div>
+    <br />
+    <div>
+      <strong>JS operators</strong>
+      <ul>
+        <li>== operator compares the contents (but not the data type).</li>
+        <li>=== operator compares the contents as well as data types.</li>
+        <li>similarly != compare contents, while !== compraes contents + data types.</li>
+        <li>Logical && returns first falsy value (this may be false, 0, empty string, or null)</li>
+        <li>Logical || returns first truthy value (this may be true, non-zero number, non-empty string, or non-null object)</li>
+      </ul>
+    </div>
+    <script>
+      // variables are auto-declared upon assignment (implicit variable declaration).
+      // data types are inferred (auto-detected).
+      // number
+      num1 = 100;
+      console.log("num1 = " + num1 + " of type " + typeof num1);
+      // number
+      num2 = 3.14;
+      console.log("num2 = " + num2 + " of type " + typeof num2);
+      // boolean
+      flag = true;
+      console.log("flag = " + flag + " of type " + typeof flag);
+      // string (can be enclosed in double quote, single quote or backquote).
+      name = "Nilesh";
+      console.log("name = " + name + " of type " + typeof name);
+      company = "Sunbeam";
+      console.log("company = " + company + " of type " + typeof company);
+      city = `Pune, 
+      India`;
+      console.log("city = " + city + " of type " + typeof city);
+      // null
+      variable = null;
+      console.log("variable = " + variable + " of type " + typeof variable);
+    </script>
+
+    <script>
+      // var keyword is used to declare variables explicitly.
+      var n1 = 22;
+      var n2 = 7;
+      var res = n1 + n2;
+      // backquote string as placeholder a.k.a. templated string
+      console.log(`addition: ${n1} + ${n2} = ${res}`);
+
+      // modern JS use "let" for declaring variables
+      // modern JS use "const" for declaring constants
+      let v1 = 12;
+      const v2 = 23;
+      console.log("initial: v1=" + v1);
+      v1 = v1 + v2;
+      console.log("modified: v1=" + v1);
+      // v2 = v2 + 1; //Error: Assignment to constant variable.
+
+      var res = "result"; // var variable can be redeclared.
+      //let v1 = 1; // Identifier 'v1' has already been declared.
+      //const v2 = 2; // Identifier 'v2' has already been declared.
+    </script>
+
+    <script>
+      console.log(`123 == "123" : `, 123 == "123"); // true
+      console.log(`123 === "123" : `, 123 === "123"); // false
+
+      console.log(`0 && 12 : `, 0 && 12); // first false value
+      console.log(`0 || 12 : `, 0 || 12); // first true value
+    </script>
+  </body>
+</html>

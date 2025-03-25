@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Nilesh Ghule" />
+    <meta name="description" content="JS Arrays" />
+    <title>JS Demo</title>
+  </head>
+  <body>
+    <h1>JS Array of Objects & JSON</h1>
+    <ul>
+      <li>Each array element can be object. Each object can be created with different method and/or of different type. Each element (object) accessed using arr[i].</li>
+      <li>Array of objects can be created using JSON syntax.</li>
+      <li>JSON is key-value format. Key is always string and value can be of any type (including array).</li>
+    </ul>
+    <script>
+      "use strict";
+      // Array of Objects -- Objects can be created in various ways (as discussed in earlier demos) -- Preferred way is ES6 class
+      // ES6 - JS class
+      class Person {
+        constructor(name, age, addr) {
+          this.name = name;
+          this.age = age;
+          this.addr = addr;
+        }
+        printInfo() {
+          console.log("person name = ", this.name);
+          console.log("person age = ", this.age);
+          console.log("person addr = ", this.addr);
+        }
+        toString() {
+          return `Person: name=${this.name}, age=${this.age}, addr=${this.addr}`;
+        }
+      }
+      // create array
+      let people = [new Person("James Bond", 65, "London"), new Person("Superman", 70, "Crypton"), new Person("Batman", 50, "Gothom")];
+      for (let i = 0; i < people.length; i++) {
+        console.log(people[i].toString());
+        //console.log(people[i].name + " | " + people[i].age + " | " + people[i].addr);
+      }
+    </script>
+    <script>
+      "use strict";
+      // Array of Objects -- using JSON syntax
+      // create array
+      let mobiles = [
+        {
+          model: "iPhone 14 Pro",
+          company: "Apple",
+          price: 89000.0,
+        },
+        {
+          model: "Google Pixel 9",
+          company: "Google",
+          price: 92000.0,
+        },
+        {
+          model: "Galaxy S25",
+          company: "Samsung",
+          price: 120000.0,
+        },
+      ];
+      for (let i = 0; i < mobiles.length; i++) {
+        console.log(mobiles[i].model + " | " + mobiles[i].company + " | " + mobiles[i].price);
+      }
+    </script>
+    <script>
+      "use strict";
+      let person = {
+        name: "Nilesh Ghule",
+        gender: "M",
+        age: 42,
+        canVote: this.age >= 18,
+        addr: {
+          city: "Pune",
+          pin: 411046,
+          country: "India",
+        },
+        hobbies: ["Teaching", "Programming", "Cooking"],
+      };
+      // print object properties
+      console.log("person info: ");
+      console.log("name : " + person.name);
+      console.log("age : " + person.age);
+      console.log("addr : " + person.addr.city + ", " + person.addr.country);
+      console.log("canVote : " + person.canVote);
+      console.log("hobbies : " + person.hobbies);
+      console.log("person info: print using console.log(): ");
+      console.log(person);
+      // console.dir()
+      console.log("person info: pretty print using console.dir(): ");
+      console.dir(person);
+      // stringify JSON
+      console.log("person info: stringify JSON: ");
+      console.log(JSON.stringify(person));
+      // parse JSON
+      let json = '{"name": "James Bond", "age": 65, "addr": "London"}';
+      let obj = JSON.parse(json);
+      console.log("print obj: ", obj);
+      // Note: console.log() can take variable number of args.
+    </script>
+  </body>
+</html>

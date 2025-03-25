@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Nilesh Ghule" />
+    <title>CSS Forms</title>
+    <meta name="description" content="Canvas" />
+    <style>
+      h1 {
+        text-align: center;
+        font-family: "Trebuchet MS";
+      }
+      .container {
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body onload="drawOnCanvas()">
+    <h1>Canvas</h1>
+    <div class="container">
+      <canvas id="board" width="1200" height="600" style="display: block; margin: auto"></canvas>
+    </div>
+    <script>
+      function drawOnCanvas() {
+        const board = document.getElementById("board");
+        const ctx = board.getContext("2d");
+        ctx.moveTo(0, 0);
+        ctx.strokeRect(0, 0, board.width, board.height);
+        ctx.font = "32px Verdana";
+        ctx.fillStyle = "blue";
+        ctx.fillText("Sunbeam", 550, 35);
+        ctx.beginPath();
+        ctx.strokeStyle = "red";
+        ctx.arc(board.width / 2, board.height / 2, 100, 0, 2 * Math.PI);
+        ctx.moveTo(0, 0);
+        ctx.lineTo(board.width, board.height);
+        ctx.stroke();
+      }
+    </script>
+  </body>
+</html>

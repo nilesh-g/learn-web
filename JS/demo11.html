@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Nilesh Ghule" />
+    <meta name="description" content="JS Functions" />
+    <title>JS Demo</title>
+  </head>
+  <body>
+    <h1>Function with Variable Args</h1>
+    <ul>
+      <li>Fn args can be accessed within fn using "arguments" keyword.</li>
+      <li>"arguments" object is like an array. Each argument can be accessed like arguments[i].</li>
+      <li>... is unpacking/spread operator that separates all elems of array.</li>
+    </ul>
+    <script>
+      "use strict";
+      function sum() {
+        console.log("sum called with args: ", arguments);
+        let args = [...arguments];
+        console.log("all args : " + args);
+        let total = 0;
+        for (let i = 0; i < arguments.length; i++) {
+          total = total + arguments[i];
+        }
+        return total;
+      }
+      // call fn with variable args
+      let res1 = sum(10, 20);
+      console.log("sum result : " + res1);
+      let res2 = sum(11, 22, 33, 44);
+      console.log("sum result : " + res2);
+    </script>
+  </body>
+</html>

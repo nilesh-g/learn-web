@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Nilesh Ghule" />
+    <meta name="description" content="OOP fundamentals" />
+    <title>JS Demo</title>
+  </head>
+  <body>
+    <h1>OOP fundamentals</h1>
+    <ul>
+      <li>Create object using constructor function i.e. new FnName(args). Properties are added into fn using "this" pointer (which refers to newly created object).</li>
+      <li>To add common properties & methods for all objects use prototype.</li>
+      <li>JS ES6 (2015) introduced classes. Classes are templates for JS objects.</li>
+      <li>The "constructor" method is a special method. It is executed automatically when a new object is created, to initialize object properties.</li>
+      <li>The class methods are declared without "function" keyword and it receives implicit "this" argument.</li>
+    </ul>
+    <script>
+      "use strict";
+      // create object & props in JS (using constructor function)
+      function Car(model, company, price) {
+        this.model = model;
+        this.company = company;
+        this.price = price;
+      }
+      // add properties and methods for all objects using "prototype".
+      Car.prototype.color = "red";
+      Car.prototype.printInfo = function () {
+        console.log("car model = ", this.model);
+        console.log("car company = ", this.company);
+        console.log("car price = ", this.price);
+        console.log("car color = ", this.color);
+      };
+      // Create Car object
+      let c1 = new Car("i10", "Hundai", 800000.0);
+      c1.printInfo();
+      // Create another Car object
+      let c2 = new Car("Punch", "Tata", 900000.0);
+      c2.printInfo();
+    </script>
+    <script>
+      "use strict";
+      // ES6 - JS class
+      class Person {
+        constructor(name, age, addr) {
+          this.name = name;
+          this.age = age;
+          this.addr = addr;
+        }
+        printInfo() {
+          console.log("person name = ", this.name);
+          console.log("person age = ", this.age);
+          console.log("person addr = ", this.addr);
+        }
+        toString() {
+          return `Person: name=${this.name}, age=${this.age}, addr=${this.addr}`;
+        }
+      }
+      // create objects
+      let p1 = new Person("James Bond", 65, "London");
+      console.log("p1 type = ", typeof p1); // object type
+      p1.printInfo();
+      let p2 = new Person("Superman", 60, "Crypton");
+      console.log("p2 type = ", typeof p2); // object type
+      p2.printInfo();
+      // call to string
+      console.log("p1 => " + p1.toString());
+      console.log("p2 => " + p2); // toString() method is implicitly called whenever object tried to convert into string.
+    </script>
+  </body>
+</html>
