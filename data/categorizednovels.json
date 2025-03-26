@@ -1,0 +1,64 @@
+{
+  "Historical": [
+    {
+      "srno": 1,
+      "title": "Chhava",
+      "author": "Shivaji Sawant",
+      "price": 450
+    },
+    {
+      "srno": 2,
+      "title": "Mrityunjay",
+      "author": "Shivaji Sawant",
+      "price": 500
+    },
+    {
+      "srno": 4,
+      "title": "Shriman Yogi",
+      "author": "Ranjit Desai",
+      "price": 480
+    },
+    {
+      "srno": 6,
+      "title": "Swami",
+      "author": "Ranjit Desai",
+      "price": 400
+    },
+    {
+      "srno": 7,
+      "title": "Pawankhind",
+      "author": "Ranjit Desai",
+      "price": 420
+    }
+  ],
+  "Mythological": [
+    {
+      "srno": 3,
+      "title": "Yugandhar",
+      "author": "Shivaji Sawant",
+      "price": 550
+    },
+    {
+      "srno": 9,
+      "title": "Yayati",
+      "author": "V. S. Khandekar",
+      "price": 430
+    }
+  ],
+  "Humor": [
+    {
+      "srno": 5,
+      "title": "Batatyachi Chawl",
+      "author": "P. L. Deshpande",
+      "price": 350
+    }
+  ],
+  "Biography": [
+    {
+      "srno": 8,
+      "title": "Raja Ravi Verma",
+      "author": "Ranjit Desai",
+      "price": 380
+    }
+  ]
+}
