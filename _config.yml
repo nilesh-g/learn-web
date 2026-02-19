@@ -1,2 +1,4 @@
-jekyll: false
+exclude:
+  - Gemfile
+  - Gemfile.lock
 
