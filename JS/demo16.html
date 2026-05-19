@@ -94,13 +94,13 @@
       function validateForm() {
         const msgElem = document.getElementById("msg");
         if( validateNameInput() && validateEmailInput() && validateMobileInput() && validateQueryInput() )
-          msgElem.textContent = "Validation Error";
-        else
           msgElem.textContent = "Form Submitted";
+        else
+          msgElem.textContent = "Validation Error";
         return false;
       }
       function validateNameInput() {
-        const nameElem = document.getElementById("name");
+        const nameElem = document.getElementById("nameInput");
         console.log("Name: " + nameElem.value);
         const nameErrorElem = document.getElementById("nameError");
         if (nameElem.value.trim().length == 0) nameError.className = "error";
@@ -108,14 +108,14 @@
         return !(nameElem.value.trim().length == 0);
       }
       function validateEmailInput() {
-        const emailElem = document.getElementById("email");
+        const emailElem = document.getElementById("emailInput");
         const emailErrorElem = document.getElementById("emailError");
         if (emailElem.value.trim().length == 0) emailError.className = "error";
         else emailError.className = "hide";
         return !(emailElem.value.trim().length == 0);
       }
       function validateMobileInput() {
-        const mobileElem = document.getElementById("mobile");
+        const mobileElem = document.getElementById("mobileInput");
         const mobileErrorElem = document.getElementById("mobileError");
         const mobilePatternError = document.getElementById("mobilePatternError");
         if (mobileElem.value.trim().length == 0) mobileError.className = "error";
@@ -127,7 +127,7 @@
         return (pattern.test(mobileElem.value.trim()));
       }
       function validateQueryInput() {
-        const queryElem = document.getElementById("query");
+        const queryElem = document.getElementById("queryInput");
         const queryErrorElem = document.getElementById("queryError");
         if (queryElem.value.trim().length == 0) queryError.className = "error";
         else queryError.className = "hide";
